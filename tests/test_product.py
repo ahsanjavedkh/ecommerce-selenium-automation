@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from config import EMAIL, PASSWORD
 import time
 
 from pages.login_page import LoginPage
@@ -15,8 +16,8 @@ driver.get("https://maelano.com/login")
 login = LoginPage(driver)
 
 login.login(
-    "nodejsdevelopertsp@gmail.com",
-    "123456"
+    EMAIL,
+    PASSWORD
 )
 
 wait = WebDriverWait(driver,20)
@@ -42,6 +43,5 @@ product.search_product("shirt")
 product.open_product()
 # Add to cart
 product.add_to_cart()
-
 input("Press Enter...")
 driver.quit()

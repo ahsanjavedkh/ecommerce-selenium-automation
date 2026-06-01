@@ -1,5 +1,6 @@
 from selenium import webdriver
 from pages.login_page import LoginPage
+from config import EMAIL, PASSWORD
 import time
 
 driver = webdriver.Chrome()
@@ -12,9 +13,11 @@ driver.get("https://maelano.com/login")
 login = LoginPage(driver)
 
 # Call reusable login function
+from config import EMAIL, PASSWORD
+
 login.login(
-    "nodejsdevelopertsp@gmail.com",
-    "123456"
+    EMAIL,
+    PASSWORD
 )
 
 print("Login flow executed successfully!")
